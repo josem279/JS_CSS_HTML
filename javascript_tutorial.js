@@ -18,12 +18,12 @@ let lastName = "Martinez";
 // const has a global scope and cannot be changed
 const middleName = "Alonso";
 // Assigning/initializing a variable - variable capitalization matters!!
-var a;
-var A;
+let a;
+let A;
 // Assigning a value to "a"
 a = 7;
 // Declaring and initializing a variable - combine both steps
-var b = 2;
+let b = 2;
 // console.log() function lets us see outputs in the console
 console.log(a);
 console.log(A);
@@ -32,10 +32,10 @@ console.log(A);
 
 // Working with Numbers
 // Performing arithmetic operations on numbers - pretty straight forward
-var sum = 10+10;
-var difference = 20-10;
-var product = 5*10;
-var quotient = 66*33;
+let sum = 10+10;
+let difference = 20-10;
+let product = 5*10;
+let quotient = 66*33;
 console.log(sum);
 console.log(difference);
 console.log(product);
@@ -49,14 +49,14 @@ myVar --;
 console.log(myVar);
 
 // Creating floats - anything with decimal value will be a float
-var ourDecimal = 5.7;
+let ourDecimal = 5.7;
 // Working with floats lets us use the remainder function - modulus equivalent
-var remainder;
+let remainder;
 remainder = 11%3;
 console.log(remainder);
 
 // Compound assignment with augmented addition - shortens a = a+12 below:
-var a = 10;
+a = 10;
 a += 12;
 console.log(a);
 // Compound assignment with augmented subtraction - shortens a= a-9 below:
@@ -73,14 +73,14 @@ console.log(a);
 
 // String variables
 // Example of string variables AKA string literals:
-var firstName = "John";
-var otherLastName = "Smith";
+let firstName = "John";
+let otherLastName = "Smith";
 
 // Escaping literal quotes in string - must use the forward slash before special character
-var myStr = "I am a \"double quoted\" string inside double quotes";
+let myStr = "I am a \"double quoted\" string inside double quotes";
 console.log(myStr);
 // Can also use single or double quotes for same result:
-var myStr = 'I am a "double quoted" string inside quotes';
+myStr = 'I am a "double quoted" string inside quotes';
 console.log(myStr);
 
 /* 
@@ -95,68 +95,68 @@ Special Escape Code Outputs
 \ from feed
 */
 // Examples:
-var myStr = "First line \n\t\\Second line\nThird line";
+myStr = "First line \n\t\\Second line\nThird line";
 console.log(myStr);
 
 // Concatenating strings
 // We can use the "+" operator with strings
 // Example:
-var ourStr = "I come first. " + "I come second.";
+let ourStr = "I come first. " + "I come second.";
 console.log(ourStr);
 // Can also use the "+=" operator:
 ourStr += " I come third.";
 console.log(ourStr);
 // Concatenating strings with variables:
-var myName = "Oso";
-var nameDeclare = "My name is " + myName;
+myName = "Oso";
+let nameDeclare = "My name is " + myName;
 console.log(nameDeclare);
 // Appending variables to strings
-var anAdjective = "awesome";
-var ourStr = "Lifting weights is ";
+let anAdjective = "awesome";
+ourStr = "Lifting weights is ";
 ourStr += anAdjective;
 console.log(ourStr);
 
 // Finding the length of a string using the "length" property:
-var firstNameLength = 0;
-var firstName = "Jeffrey";
+let firstNameLength = 0;
+firstName = "Jeffrey";
 firstNameLength = firstName.length;
 console.log(firstNameLength);
 
 // Indexing strings using "[]":
-var firstLetter = "";
-var firstName = "Johnny";
+let firstLetter = "";
+firstName = "Johnny";
 firstLetter = firstName[0];
 console.log(firstLetter);
 // Strings are immutable - cannot change individual parts only the entire string
 // Finding the last letter of a string using length property
-var lastLetter = firstName[firstName.length -1];
+let lastLetter = firstName[firstName.length -1];
 console.log(lastLetter);
 
 
 
 // Arrays
 // Storing multiple values with arrays
-var myArray = ["John", 23];
+let myArray = ["John", 23];
 console.log(myArray);
 // Nested Arrays - multi-dimensional arrays
-var myArray = [["The universe", 42], ["everything", 101010]];
+myArray = [["The universe", 42], ["everything", 101010]];
 console.log(myArray);
 // Accessing Arrays with Indexes
-var myArray = [50,60,70];
+myArray = [50,60,70];
 console.log(myArray[0]);
 console.log(myArray[1]);
 console.log(myArray[2]);
 // Modifying arrays with indexes
-var myArray = [1,2,3,4,5];
+myArray = [1,2,3,4,5];
 myArray[0] = 0;
 console.log(myArray);
 // Accessing multi-dimensional arrays with indexes
-var myArray = [[1,2,3], [4,5,6], [[7,8,9], 13, 14]];
+myArray = [[1,2,3], [4,5,6], [[7,8,9], 13, 14]];
 console.log(myArray[0][0]);
 console.log(myArray[2][0][1]);
 console.log(myArray[2][1]);
 // We can append data to an array with the "push" function 
-var myArray = [["John", 23], ["Cat", 2]];
+myArray = [["John", 23], ["Cat", 2]];
 myArray.push(["Rick", 12]);
 console.log(myArray);
 // Removing the last from an array with the "pop" function
@@ -168,7 +168,7 @@ shiftFunction = myArray.shift();
 console.log(shiftFunction);
 console.log(myArray);
 // Adding an element to the begging of an array with the "unshift" function
-var myArray = ["Homer", "J.", "Simpson"];
+myArray = ["Homer", "J.", "Simpson"];
 myArray.unshift("Mr.");
 console.log(myArray);
 
@@ -190,7 +190,7 @@ myFuncWithArgs(55,5);
 
 /* Variables declared within a function have a local scope trying to call that value outside the function will not return the same value instead the output returns the value of the variable as was assigned outside the function */
 function myLocalScope() {
-    var myVar = 5;
+    let myVar = 5;
     console.log(myVar);
 }
 myLocalScope();
@@ -203,7 +203,7 @@ function minusSeven(num) {
 console.log(minusSeven(10));
 
 // Assignment with a returned number
-var changedNum = 0;
+let changedNum = 0;
 function change(num) {
     return (num + 5) / 3;
 }
@@ -294,7 +294,7 @@ console.log(testLogicalOr(25));
 
 // Else Statements
 function testElse(val) {
-    var result = "";
+    let result = "";
 
     if (val > 5) {
         result = "Bigger than 5";
@@ -326,7 +326,7 @@ console.log(testElseIf(6));
 // Switch statements
 // Switch statements the value and can have multiple case statements for different values
 function caseInSwitch(val) {
-    var answer = "";
+    let answer = "";
     switch(val) {
         case 1: 
             answer = "Alpha";
@@ -350,7 +350,7 @@ console.log(caseInSwitch(4));
 
 // Setting default values to switch statements
 function switchOfStuff(val) {
-    var answer = "";
+    let answer = "";
     switch (val) {
         case "a":
             answer = "apple";
@@ -371,7 +371,7 @@ console.log(switchOfStuff(2));
 
 // Multiple identical options in switch statements
 function sequentialSizes(val) {
-    var answer = "";
+    let answer = "";
     switch(val) {
         case 1:
         case 2:
@@ -405,7 +405,7 @@ console.log(isLess(2,5));
 
 // Building JavaScript objects
 // Example:
-var myDog = {
+let myDog = {
     "name": "Coco",
     "legs": 4,
     "tails": 1,
@@ -414,12 +414,12 @@ var myDog = {
     1: "Curr"
 };
 // Accessing object properties with dot notation - explicit
-var nameValue = myDog.name;
+let nameValue = myDog.name;
 console.log(nameValue);
 // Accessing object properties with bracket notation - required if name has a space or accessing variables
-var dogEyes = myDog["color eyes"];
-var breed = 1;
-var dogBreed = myDog[breed];
+let dogEyes = myDog["color eyes"];
+let breed = 1;
+let dogBreed = myDog[breed];
 console.log(dogEyes);
 console.log(dogBreed);
 // Updating object properties
@@ -434,8 +434,8 @@ console.log(myDog);
 
 // Using objects for lookups
 function phoneticLookup(val) {
-    var result = "";
-    var lookupVar = {
+    let result = "";
+    let lookupVar = {
         "alpha": "Adams",
         "bravo": "Boston",
         "charlie": "Chicago"
@@ -446,7 +446,7 @@ function phoneticLookup(val) {
 console.log(phoneticLookup("alpha"));
 
 // Manipulating complex objects
-var myMusic = [
+let myMusic = [
     {
         "artist": "50 Cent",
         "title": "Many Men",
@@ -469,5 +469,127 @@ var myMusic = [
     }
 ];
 // Accessing nested objects
-var lollipopRating = myMusic[1]["rating"];
+let lollipopRating = myMusic[1]["rating"];
 console.log(lollipopRating);
+
+
+// Loops
+// Iterating with "While" Loops
+myArray = [];
+let i = 0; // Must create an iterator
+while(i < 5) {
+    myArray.push(i);
+    i++;
+}
+console.log(myArray);
+
+// Iterating with "For" loops
+myArray = [];
+for (let i = 0; i < 5; i++) {
+    myArray.push(i);
+}
+console.log(myArray);
+
+// Counting backwards with a "for" loop
+myArray = [];
+for (let i = 10; i > 0; i -= 2) {
+    myArray.push(i);
+}
+console.log(myArray);
+
+// Iterating through the contents of an array with a "for" loop
+myArray = [9,10,11,12];
+let myTotal = 0;
+for (let i = 0; i < myArray.length; i++) {
+    myTotal += myArray[i];
+}
+console.log(myTotal);
+
+// Nesting "For" loops
+function multiplyAll(arr) {
+    let product = 1;
+    for (let i= 0; i < arr.length; i++) {
+        for (let j= 0; j < arr[i].length; j++) {
+            product *= arr[i][j];
+        }
+    }
+    return product;
+}
+product = multiplyAll([[1,2], [3,4], [5,6,7]]);
+console.log(product);
+
+// Iterate with "Do...while" loops
+// Do while loops will always run at least once before checking condition to keep running
+myArray = [];
+i = 10;
+do {
+    myArray.push(i);
+    i++;
+} while (i < 5)
+console.log(i, myArray);
+
+
+ 
+// Generating random fractions
+// Using the math.random() funciton generates a decimal between 0 and 1
+function randomFraction() {
+    return Math.random();
+}
+//console.log(randomFraction());
+
+// Generating a random whole number
+let randomNum0and19 = Math.floor(Math.random() * 20);
+//console.log(randomNum0and19);
+
+// Generating random whole numbers within a range
+function randomRange(ourMin, ourMax) {
+    return Math.floor(Math.random() * (ourMax - ourMin + 1)) + ourMin;
+}
+//console.log(randomRange(4,6)); 
+
+// Using the parseInt function - takes a string and returns an integer
+function convertToInt(str) {
+    return parseInt(str);
+}
+console.log(convertToInt("56"));
+
+
+// Using the Conditional (Ternary) Operator
+// Basically a one line if...else expression
+// Syntax: condition ? statement if true: statement if false;
+function checkEqual(a, b) {
+    return a === b ? true : false;
+}
+console.log(checkEqual(1,2));
+
+// Using multiple conditional (ternary) operators
+function checkSign(num) {
+    return num > 0 ? "positive" : num < 0 ? "negative" : "zero";
+}
+console.log(checkSign(-4));
+
+ 
+
+// Using arrow functions to write anonymous functions
+const magic = () => new Date();
+// Writing arrow functions with parameters
+const myConcat = (arr1, arr2) => arr1.concat(arr2);
+console.log(myConcat([1,2,3,],[4,5,6]));
+
+// Write higher order arrow functions
+const realNumberArray = [4, 5.6, -9.8, 3.14, 42, 6, 8.34, -2];
+const squareList = (arr) => {
+    const squaredIntegers = arr.filter(num => Number.isInteger(num) && num > 0).map(x => x * x);
+    return squaredIntegers;
+};
+const squaredIntegers = squareList(realNumberArray);
+console.log(squaredIntegers);
+
+// Write higher order arrow functions - adding a default value for argument
+const increment = (number, value=1) => number + value;
+console.log(increment(4,9));
+console.log(increment(4));
+
+// Use the rest operator "..." with function parameters - lets you add variable # of args
+const sumFunct = (...args) => args.reduce((a,b) => a + b, 0);
+console.log(sumFunct(4,6,8,8));
