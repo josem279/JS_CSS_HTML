@@ -602,3 +602,68 @@ let arr4;
     arr3[0] = "potato"
 })();
 console.log(arr4);
+
+// Use deconstructuring assignment to assign variables from objects
+const AVG_TEMPERATURES = {
+    today: 77.5,
+    tomorrow: 79
+};
+function getTempOfTmrw(avgTemperatures) {
+    "use strict";
+    const { tomorrow : tempOfTomorrow } = avgTemperatures;
+    return tempOfTomorrow;
+}
+console.log(getTempOfTmrw(AVG_TEMPERATURES));
+
+// Destructuring assignment with nested objects
+const LOCAL_FORECAST = {
+    today: { min: 72, max: 83 },
+    tomorrow: { min: 73.3, max: 84.3 }
+};
+function getMaxOfTmr(forecast) {
+    "use strict";
+    const { tomorrow : {max : maxOfTomorrow}} = forecast;
+    return maxOfTomorrow
+};
+console.log(getMaxOfTmr(LOCAL_FORECAST));
+
+// Use destructuring assignment to assign variables from arrays
+const [z, x, , y] = [1, 2, 3, 4, 5, 6];
+console.log(z, x, y);
+
+// Use destructuring assignment with the rest operator
+const source = [1,2,3,4,5,6,7,8,9,10];
+function removeFirstTwo(list) {
+    const [ , , ...arr] = list;
+    return arr;
+}
+const arr = removeFirstTwo(source);
+console.log(arr);
+console.log(source);
+
+// Use destructuring assignment to pass an object as a function's parameters
+const stats = {
+    max: 56.78,
+    standard_deviation: 4.34,
+    median: 34.54,
+    mode: 23.87,
+    min: -.75,
+    average: 35.85
+};
+const half = (function() {
+    return function half({ max, min }) {
+        return (max + min ) / 2.0;
+    };
+})();
+console.log(stats);
+console.log(half(stats));
+
+
+// Create strings using template literals using "`" - like f strings in python
+const person = {
+    name: "John",
+    age: 56
+};
+const greeting = `Hello, my name is ${person.name}! I am ${person.age} yeears old.`;
+console.log(greeting);
+
