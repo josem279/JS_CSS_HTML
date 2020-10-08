@@ -667,3 +667,49 @@ const person = {
 const greeting = `Hello, my name is ${person.name}! I am ${person.age} yeears old.`;
 console.log(greeting);
 
+// Write concise object literal declarations using simple fields
+const createPerson = (name, age, gender) => ({ name, age, gender});
+console.log(createPerson("Zodiac", 56, "male"));
+
+// Write concise declarative functions
+const bicycle = {
+    gear: 2,
+    setGear(newGear) {
+        "use strict";
+        this.gear = newGear;
+    }
+};
+bicycle.setGear(3);
+console.log(bicycle.gear);
+
+// Use class syntax to define a constructor function
+class spaceShuttle {
+    constructor(targetPlanet){
+        this.targetPlanet = targetPlanet;
+    }
+}
+ var zeus = new spaceShuttle("Jupiter");
+ console.log(zeus.targetPlanet);
+
+// Use getters and setters to control access to an object
+function makeClass() {
+    class thermostat {
+        constructor(temp) {
+            this._temp = 5/9 * (temp - 32);
+        }
+        get temperature() {
+            return this._temp;
+        }
+        set temperature(updatedTemp){
+            this._temp = updatedTemp;
+        }
+    }
+    return thermostat;
+}
+const thermostat = makeClass();
+const thermos = new thermostat(76);
+let temp = thermos.temperature;
+thermos.temperature = 26;
+temp = thermos.temperature;
+console.log(temp);
+
