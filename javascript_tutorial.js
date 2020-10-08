@@ -593,3 +593,12 @@ console.log(increment(4));
 // Use the rest operator "..." with function parameters - lets you add variable # of args
 const sumFunct = (...args) => args.reduce((a,b) => a + b, 0);
 console.log(sumFunct(4,6,8,8));
+
+// Use the spread operator to evaluate arrays in-place
+const arr3 = ["Jan","Feb","Mar"];
+let arr4;
+(function() {
+    arr4 = [...arr3];
+    arr3[0] = "potato"
+})();
+console.log(arr4);
